@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// trương 
+// trương văn hoàng - ph31092
 namespace Lam_BT
 {
     internal class Program
