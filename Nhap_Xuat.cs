@@ -46,8 +46,10 @@ namespace Lam_BT
             Console.WriteLine($"* Nhập và xuất thông tin món quà 08/03 bạn tặng cho NY  *");
             Console.WriteLine($"*"); Console.SetCursorPosition(56, 4); Console.WriteLine($"*");
             Console.WriteLine($"*********************************************************");
+           
             Console.ReadKey();
             Console.Clear();
+                
             Console.WriteLine($"*********************************************************");
             Console.WriteLine($"*"); Console.SetCursorPosition(56, 1); Console.WriteLine($"*");
             Console.WriteLine($"*"); Console.SetCursorPosition(56, 2); Console.WriteLine($"*");
@@ -69,8 +71,10 @@ namespace Lam_BT
             noiMua = Console.ReadLine();
             Console.WriteLine($"*"); Console.SetCursorPosition(56, 8); Console.WriteLine($"*");
             Console.WriteLine($"*********************************************************");
+                
             Console.ReadKey();
             Console.Clear();
+                
             Console.WriteLine($"*********************************************************");
             Console.Write($"* Họ & tên sinh viên: {fullName}");
             Console.SetCursorPosition(56, 1); Console.WriteLine($"*");
@@ -81,7 +85,6 @@ namespace Lam_BT
             Console.WriteLine($"*");
             Console.SetCursorPosition(20, 5); Console.WriteLine($"Thông tin");
             Console.SetCursorPosition(56, 5); Console.WriteLine($"*");
-
             Console.Write($"* Tên món quà: {tenMonQua}");
             Console.SetCursorPosition(56, 6); Console.WriteLine($"*");
             Console.Write($"* Giá tiền: {String.Format("{0:0,0.000}", giaTien)} VND");
@@ -93,6 +96,7 @@ namespace Lam_BT
             Console.Write($"* Được mua ở: {noiMua}");
             Console.SetCursorPosition(56, 10); Console.WriteLine($"*");
             Console.WriteLine($"*********************************************************");
+                
             Console.ReadKey();
             Console.Clear();
         }
