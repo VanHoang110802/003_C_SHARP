@@ -1,15 +1,3 @@
-/*
-*****************************************                   Ho ten:     Truong Van Hoang
-*                  MENU                 *                   Mssv:       PH31092
-*    [0]: Thoat                         *                   Giang vien: Nguyen Khanh Huyen (huyennk6)
-*    [1]: Nhap/xuat thong tin xe may    *
-*    [2]: Tim min/max                   *
-*****************************************
-Vui long nhap lua chon cua ban:
-
-*/
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,11 +18,11 @@ namespace Add_All
             do
             {
                 Console.SetCursorPosition(60, 0);
-                Console.Write("Ho ten:     Truong Van Hoang");
+                Console.Write("Họ tên:     Trương Văn Hoàng");
                 Console.SetCursorPosition(60, 1);
                 Console.Write("Mssv:       PH31092");
                 Console.SetCursorPosition(60, 2);
-                Console.Write("Giang vien: Nguyen Khanh Huyen (huyennk6)");
+                Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
                 for (int i = 0; i < 41; i++)
                 {
                     Console.SetCursorPosition(i, 0);
@@ -42,11 +30,11 @@ namespace Add_All
                 }
                 Console.SetCursorPosition(19, 1); Console.Write("MENU");
                 Console.SetCursorPosition(5, 2);
-                Console.WriteLine("[0]: Thoat");
+                Console.WriteLine("[0]: Thoát");
                 Console.SetCursorPosition(5, 3);
-                Console.WriteLine("[1]: Nhap/xuat thong tin xe may");
+                Console.WriteLine("[1]: Nhập/xuất thông tin xe máy");
                 Console.SetCursorPosition(5, 4);
-                Console.WriteLine("[2]: Tim min/max");
+                Console.WriteLine("[2]: Tìm min/max");
                 for (int i = 1; i < 5; i++)
                 {
                     Console.SetCursorPosition(0, i); Console.Write("*");
@@ -61,7 +49,7 @@ namespace Add_All
                     Console.SetCursorPosition(i, 5);
                     Console.Write("*");
                 }
-                Console.Write("\nVui long nhap lua chon cua ban: ");
+                Console.Write("\nVui lòng nhập lựa chọn của bạn: ");
 
                 try
                 {
@@ -85,11 +73,11 @@ namespace Add_All
                                 Console.Clear();
 
                                 Console.SetCursorPosition(60, 0);
-                                Console.Write("Ho ten:     Truong Van Hoang");
+                                Console.Write("Họ tên:     Trương Văn Hoàng");
                                 Console.SetCursorPosition(60, 1);
                                 Console.Write("Mssv:       PH31092");
                                 Console.SetCursorPosition(60, 2);
-                                Console.Write("Giang vien: Nguyen Khanh Huyen (huyennk6)");
+                                Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
 
                                 for (int i = 0; i < 56; i++)
                                 {
@@ -120,11 +108,11 @@ namespace Add_All
                                 Console.Clear();
 
                                 Console.SetCursorPosition(60, 0);
-                                Console.Write("Ho ten:     Truong Van Hoang");
+                                Console.Write("Họ tên:     Trương Văn Hoàng");
                                 Console.SetCursorPosition(60, 1);
                                 Console.Write("Mssv:       PH31092");
                                 Console.SetCursorPosition(60, 2);
-                                Console.Write("Giang vien: Nguyen Khanh Huyen (huyennk6)");
+                                Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
 
                                 for (int i = 0; i < 57; i++)
                                 {
@@ -167,11 +155,11 @@ namespace Add_All
                                 Console.Clear();
 
                                 Console.SetCursorPosition(60, 0);
-                                Console.Write("Ho ten:     Truong Van Hoang");
+                                Console.Write("Họ tên:     Trương Văn Hoàng");
                                 Console.SetCursorPosition(60, 1);
                                 Console.Write("Mssv:       PH31092");
                                 Console.SetCursorPosition(60, 2);
-                                Console.Write("Giang vien: Nguyen Khanh Huyen (huyennk6)");
+                                Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
 
                                 for (int i = 0; i < 56; i++)
                                 {
@@ -219,11 +207,11 @@ namespace Add_All
                                 {
                                     Console.Clear();
                                     Console.SetCursorPosition(60, 0);
-                                    Console.Write("Ho ten:     Truong Van Hoang");
+                                    Console.Write("Họ tên:     Trương Văn Hoàng");
                                     Console.SetCursorPosition(60, 1);
                                     Console.Write("Mssv:       PH31092");
                                     Console.SetCursorPosition(60, 2);
-                                    Console.Write("Giang vien: Nguyen Khanh Huyen (huyennk6)");
+                                    Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
 
                                     for (int i = 0; i < 41; i++)
                                     {
@@ -249,13 +237,13 @@ namespace Add_All
                                     try
                                     {
                                         Console.SetCursorPosition(2, 1);
-                                        Console.Write("Nhap vao Min = ");
+                                        Console.Write("Nhập vào Min = ");
                                         Min = Convert.ToInt32(Console.ReadLine());
 
                                         if (Min < 0)
                                         {
                                             Console.SetCursorPosition(2, 10);
-                                            Console.WriteLine("Min nhap khong hop le!");
+                                            Console.WriteLine("Min nhập không hợp lệ!");
                                             Console.ReadKey();
                                             Console.Clear();
                                         }
@@ -263,7 +251,8 @@ namespace Add_All
                                     }
                                     catch
                                     {
-                                        Console.WriteLine("Du lieu nhap khong hop le!");
+                                        Console.SetCursorPosition(2, 10);
+                                        Console.WriteLine("Dữ liệu nhập không hợp lệ!");
                                         Console.ReadKey();
                                         Console.Clear();
                                     }
@@ -274,11 +263,11 @@ namespace Add_All
                                 {
                                     Console.Clear();
                                     Console.SetCursorPosition(60, 0);
-                                    Console.Write("Ho ten:     Truong Van Hoang");
+                                    Console.Write("Họ tên:     Trương Văn Hoàng");
                                     Console.SetCursorPosition(60, 1);
                                     Console.Write("Mssv:       PH31092");
                                     Console.SetCursorPosition(60, 2);
-                                    Console.Write("Giang vien: Nguyen Khanh Huyen (huyennk6)");
+                                    Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
 
                                     for (int i = 0; i < 41; i++)
                                     {
@@ -302,17 +291,17 @@ namespace Add_All
                                     }
 
                                     Console.SetCursorPosition(2, 1);
-                                    Console.Write($"Nhap vao Min = {Min}");
+                                    Console.Write($"Nhập vào Min = {Min}");
                                     try
                                     {
                                         Console.SetCursorPosition(2, 3);
-                                        Console.Write("Nhap vao Max = ");
+                                        Console.Write("Nhập vào Max = ");
                                         Max = Convert.ToInt32(Console.ReadLine());
 
                                         if (Max < 0 || Max < Min)
                                         {
                                             Console.SetCursorPosition(2, 10);
-                                            Console.WriteLine("MAX nhap khong hop le!");
+                                            Console.WriteLine("MAX nhập không hợp lệ!");
                                             Console.ReadKey();
                                             Console.Clear();
                                         }
@@ -321,7 +310,7 @@ namespace Add_All
                                     catch
                                     {
                                         Console.SetCursorPosition(2, 10);
-                                        Console.WriteLine("Du lieu nhap khong hop le!");
+                                        Console.WriteLine("Dữ liệu nhập không hợp lệ!");
                                         Console.ReadKey();
                                         Console.Clear();
                                     }
@@ -329,11 +318,11 @@ namespace Add_All
 
                                 Console.Clear();
                                 Console.SetCursorPosition(60, 0);
-                                Console.Write("Ho ten:     Truong Van Hoang");
+                                Console.Write("Họ tên:     Trương Văn Hoàng");
                                 Console.SetCursorPosition(60, 1);
                                 Console.Write("Mssv:       PH31092");
                                 Console.SetCursorPosition(60, 2);
-                                Console.Write("Giang vien: Nguyen Khanh Huyen (huyennk6)");
+                                Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
 
                                 for (int i = 0; i < 55; i++)
                                 {
@@ -343,26 +332,43 @@ namespace Add_All
 
 
                                 Console.WriteLine();
-
                                 int idx = 2, idy = 3, checkDong = 13;
-                                for (int i = Min; i <= Max; ++i)
+                                if (Min != Max)
                                 {
-                                    if (i % 2 == 1)
+
+                                    for (int i = Min; i <= Max; ++i)
                                     {
-                                        Console.SetCursorPosition(idx, idy);
-                                        Console.Write($"{i} ");
-                                        ++dem;
-                                        idx += 4;
+                                        if (i % 2 == 1)
+                                        {
+                                            Console.SetCursorPosition(idx, idy);
+                                            Console.Write($"{i} ");
+                                            ++dem;
+                                            idx += 4;
+                                        }
+                                        if (dem == checkDong)
+                                        {
+                                            idx = 2;
+                                            idy++;
+                                            checkDong += 13;
+                                        }
                                     }
-                                    if (dem == checkDong)
-                                    {
-                                        idx = 2;
-                                        idy++;
-                                        checkDong += 13;
-                                    }
+                                    Console.SetCursorPosition(2, 1);
+                                    Console.WriteLine($"Có {dem} số lẻ trong đoạn từ [{Min}, {Max}]:");
                                 }
-                                Console.SetCursorPosition(2, 1);
-                                Console.WriteLine($"Co {dem} so le trong doan tu [{Min}, {Max}]:");
+                                else 
+                                {
+                                    if (Min % 2 == 0)
+                                    {
+                                        Console.SetCursorPosition(2, 2);
+                                        Console.WriteLine($"Có 0 số lẻ trong đoạn từ [{Min}, {Max}].");
+                                    }
+                                    else
+                                    {
+                                        Console.SetCursorPosition(2, 2);
+                                        Console.WriteLine($"Có 1 số lẻ trong đoạn từ [{Min}, {Max}]: {Min}");
+                                    } 
+                                        
+                                }
 
                                 for (int i = 1; i <= idy; i++)
                                 {
@@ -386,7 +392,7 @@ namespace Add_All
                         default:
                             {
                                 Console.SetCursorPosition(0, 10);
-                                Console.Write("Lua chon nhap khong hop le!");
+                                Console.Write("Lựa chọn nhập không hợp lệ!");
                                 Console.ReadKey();
                                 Console.Clear();
                                 break;
@@ -396,7 +402,7 @@ namespace Add_All
                 catch
                 {
                     Console.SetCursorPosition(0, 10);
-                    Console.Write("Lua chon nhap khong hop le!");
+                    Console.Write("Lựa chọn nhập không hợp lệ!");
                     Console.ReadKey();
                     Console.Clear();
                 }
