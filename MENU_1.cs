@@ -1,3 +1,14 @@
+/*
+*****************************************                   Họ tên:     Trương Văn Hoàng
+*                  MENU                 *                   Mssv:       PH31092
+*    [0]: Thoát                         *                   Giảng viên: Nguyễn Khánh Huyền (huyennk6)
+*    [1]: Nhập/xuất thông tin xe máy    *
+*    [2]: Tìm min/max                   *
+*****************************************
+Vui lòng nhập lựa chọn của bạn:
+
+*/
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -355,7 +366,7 @@ namespace Add_All
                                     Console.SetCursorPosition(2, 1);
                                     Console.WriteLine($"Có {dem} số lẻ trong đoạn từ [{Min}, {Max}]:");
                                 }
-                                else 
+                                else
                                 {
                                     if (Min % 2 == 0)
                                     {
@@ -366,8 +377,8 @@ namespace Add_All
                                     {
                                         Console.SetCursorPosition(2, 2);
                                         Console.WriteLine($"Có 1 số lẻ trong đoạn từ [{Min}, {Max}]: {Min}");
-                                    } 
-                                        
+                                    }
+
                                 }
 
                                 for (int i = 1; i <= idy; i++)
