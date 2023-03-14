@@ -1,31 +1,52 @@
+using Microsoft.Win32;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace LAB_TONG_HOP
 {
+    static class Win32
+    {
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool SetConsoleTextAttribute(IntPtr hConsoleOutput, short attributes);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern IntPtr GetStdHandle(int nStdHandle);
+    }
+
     internal class Program
     {
         const int MAX = 100;
         const int namGoc = 2023;
         static void Main(string[] args)
         {
+            
+
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
 
-            Menu();
+            
+           
+
+             Menu();
+
         }
         static void Menu()
         {
+            
             int luaChon;
             bool checkMenu = true;
             do 
-            { 
+            {
+                Info();
+                Console.SetCursorPosition(0, 0);
                 noiDungMenu();
+                
                 try
                 {
                     luaChon = Convert.ToInt32(Console.ReadLine());
@@ -38,6 +59,7 @@ namespace LAB_TONG_HOP
                             }
                         case 1:
                             {
+
                                 Bai1();
                                 break;
                             }
@@ -74,6 +96,15 @@ namespace LAB_TONG_HOP
             } while (checkMenu);
         }
 
+        static void Info()
+        {
+            Console.SetCursorPosition(60, 0);
+            Console.Write("Họ tên:     Trương Văn Hoàng");
+            Console.SetCursorPosition(60, 1);
+            Console.Write("Mssv:       PH31092");
+            Console.SetCursorPosition(60, 2);
+            Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
+        }
         static void noiDungMenu()
         {
             Console.WriteLine("+-------------------MENU----------------------+");
@@ -435,9 +466,127 @@ namespace LAB_TONG_HOP
         }
 
 // **************************************************************************************************
+        
         static void Bai4()
         {
+            int n = -1;
+            do
+            {
+                Console.Write("Nhập số lượng sinh viên: ");
+                try
+                {
+                    n = Convert.ToInt32(Console.ReadLine());
+                    if (n < 1 || n > MAX)
+                    {
+                        Console.WriteLine("Số lượng sinh viên nhập không hợp lệ");
+                    }
+                    else break;
+                }
+                catch
+                {
+                    Console.WriteLine("Dữ liệu nhập không được cho phép!");
+                }
+                
+            } while (n < 1 || n > MAX);
 
+            string[] ten = new string[n];
+            string[] Msv = new string[n];
+            int[] namSinh = new int [n];
+            int[] tuoiSv = new int[n];
+
+            for(int i=0;i<n;++i)
+            {
+                Console.WriteLine($"Nhập thông tin sinh viên thứ {i+1}:");
+                Console.Write("Tên: ");
+                ten[i] = Console.ReadLine();
+                
+                bool checkMsv;
+                do
+                {
+                    Console.Write("Mã số sinh viên: ");
+                    checkMsv = true;
+                    Msv[i] = Console.ReadLine();
+                    int lengthString = Msv[i].Length;
+                    if (i > 0)
+                    {
+                        if (Msv[i] == Msv[i - 1] || lengthString < 1)
+                        {
+                            Console.WriteLine("Mã số sinh viên này đã được tồn tại hoặc không hợp lệ, xin hãy kiểm tra lại!");
+                        }
+                        else checkMsv = false;
+                    }
+                    else if (lengthString < 1)
+                    {
+                        Console.WriteLine("Mã số sinh viên này đã được tồn tại hoặc không hợp lệ, xin hãy kiểm tra lại!");
+                    }
+                    else checkMsv = false;
+                } while (checkMsv);
+                Console.Write("Năm sinh: ");
+                namSinh[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            for (int i = 0; i < n; ++i)
+            {
+                Console.WriteLine($"{Msv[i]}");
+            }
+            int luaChon, checkNhapTuoi;
+            Console.WriteLine("Bạn có muốn nhập tuổi cho từng sinh viên không?");
+            do
+            {
+                checkNhapTuoi = 0;
+                
+                Console.Write("\n[1]. Yes\n[2]. No\nBạn chọn: ");
+                try
+                {
+                    luaChon = Convert.ToInt32(Console.ReadLine());
+                    if (luaChon == 1)
+                    {
+                        checkNhapTuoi = 1;
+                        break;
+                    }
+                    else if (luaChon == 2)
+                    {
+                        checkNhapTuoi = 2;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Lựa chọn nhập không hợp lệ, xin hãy kiểm tra lại!");
+                    }    
+                }
+                catch
+                {
+                    Console.WriteLine("Dữ liệu nhập không được cho phép!");
+                }
+                
+            } while (checkNhapTuoi < 1 || checkNhapTuoi > 2);
+
+            if(checkNhapTuoi == 1)
+            {
+                Console.WriteLine("Hãy nhập vào tuổi cho từng sinh viên: ");
+                for(int i = 0; i < n;++i)
+                {
+                    Console.Write($"Sinh viên thứ {i + 1}: ");
+                    do
+                    {
+                        try
+                        {
+                            tuoiSv[i] = Convert.ToInt32(Console.ReadLine());
+                            if (tuoiSv[i] < 17)
+                            {
+                                Console.WriteLine("Tuổi của sinh viên không hợp lệ, xin hay kiểm tra lại!");
+                            }
+                            else break;
+                        }
+                        catch
+                        {
+                            Console.WriteLine("Dữ liệu nhập không được cho phép!");
+                        }
+                    } while (tuoiSv[i] < 17);
+                }
+            }    
+            Console.ReadKey();
+            Console.Clear();
         }
     }
 }
