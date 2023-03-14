@@ -1,4 +1,3 @@
-using Microsoft.Win32;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,28 +9,14 @@ using System.Threading.Tasks;
 
 namespace LAB_TONG_HOP
 {
-    static class Win32
-    {
-        [DllImport("kernel32.dll", SetLastError = true)]
-        public static extern bool SetConsoleTextAttribute(IntPtr hConsoleOutput, short attributes);
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        public static extern IntPtr GetStdHandle(int nStdHandle);
-    }
-
     internal class Program
     {
         const int MAX = 100;
         const int namGoc = 2023;
         static void Main(string[] args)
         {
-            
-
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
-
-            
-           
 
              Menu();
 
@@ -45,7 +30,7 @@ namespace LAB_TONG_HOP
             {
                 Info();
                 Console.SetCursorPosition(0, 0);
-                noiDungMenu();
+                NoiDungMenu();
                 
                 try
                 {
@@ -105,14 +90,14 @@ namespace LAB_TONG_HOP
             Console.SetCursorPosition(60, 2);
             Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
         }
-        static void noiDungMenu()
+        static void NoiDungMenu()
         {
             Console.WriteLine("+-------------------MENU----------------------+");
-            Console.WriteLine("\t1. Kiểm tra số chẵn lẻ");
-            Console.WriteLine("\t2. Kiểm tra ngày tháng");
-            Console.WriteLine("\t3. Mảng điểm");
-            Console.WriteLine("\t4. Mảng thông tin sinh viên Poly");
-            Console.WriteLine("\t0. Thoát");
+            Console.WriteLine("\t[1]: Kiểm tra số chẵn lẻ");
+            Console.WriteLine("\t[2]: Kiểm tra ngày tháng");
+            Console.WriteLine("\t[3]: Mảng điểm");
+            Console.WriteLine("\t[4]: Mảng thông tin sinh viên Poly");
+            Console.WriteLine("\t[0]: Thoát");
             Console.WriteLine("+---------------------------------------------+");
             Console.Write("Vui lòng nhập lựa chọn: ");
         }
