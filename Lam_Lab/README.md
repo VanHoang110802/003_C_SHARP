@@ -1,10 +1,11 @@
 * Lab Tổng Hợp:
   - Bài 1:
-    + Fix người dùng nhập các kí tự không phải là số cho nhập số lượng phần tử mảng.
-    + Fix người dùng nhập số lượng phần tử không hợp lệ ( số lượng < 1, số lượng > số lượng đã quy định...)
+    + Fix người dùng nhập các kiểu dữ liệu không phải là hợp lệ cho nhập số lượng phần tử mảng. (Kí tự như: abc, XYZ, ./;'ơ]p=-+ ....)
+    + Fix người dùng nhập số lượng phần tử không hợp lệ. (Số lượng < 1, số lượng > số lượng đã quy định...)
   
   - Bài 2:
-   
+    + Fix người dùng nhập sai kiểu dữ liệu cho ngày tháng năm. (Kí tự như: abc, XYZ, ./;'ơ]p=-+ ....)
+    + Fix người dùng nhập không hợp lệ của nội dung ngày tháng năm. (Ngày < 1, tháng > 12, năm < 1800, ...)
   - Bài 3:
 
   - Bài 4
