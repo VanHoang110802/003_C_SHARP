@@ -415,6 +415,7 @@ namespace LAB_TONG_HOP
             Console.WriteLine($"Ngày vừa nhập: {ngayHienTai}/{thangHienTai}/{namHienTai}");
             NgayKeTiep(namHienTai, thangHienTai, ngayHienTai);
             NgayKeTruoc(namHienTai, thangHienTai, ngayHienTai);
+            Console.SetCursorPosition(57, 12);
             Console.ReadKey();
             Console.Clear();
         }
@@ -457,7 +458,7 @@ namespace LAB_TONG_HOP
         }
         static void Bai3()
         {
-            Console.Clear();
+           Console.Clear();
             Info();
             Console.SetCursorPosition(1, 7);
             Console.Write($"Vui lòng nhập lựa chọn: {Lua_Chon}");
@@ -474,7 +475,7 @@ namespace LAB_TONG_HOP
             int n = -1;
             do
             {
-                Console.Write("Nhập số lượng điểm: ");
+                Console.Write("\nNhập số lượng điểm: ");
                 try
                 {
                     n = Convert.ToInt32(Console.ReadLine());
@@ -482,14 +483,14 @@ namespace LAB_TONG_HOP
                     {
                         Console.Write("Số lượng điểm nhập không hợp lệ!");
                         Console.ReadKey();
-                        Console.Clear();
+                        
                     }
                 }
                 catch
                 {
                     Console.Write("Dữ liệu nhập không được phép chấp nhận!");
                     Console.ReadKey();
-                    Console.Clear();
+                    
                 }
             } while (n < 0 || n > Max_Phan_Tu);
 
@@ -651,10 +652,22 @@ namespace LAB_TONG_HOP
                     tuoiSv[i] = namHienTai - namSinh[i];
                 }
 
+                int y = 11;
                 for (int i = 0; i < n; ++i)
                 {
-                    Console.WriteLine($"\nThông tin sinh viên thứ {i + 1}:");
-                    Console.WriteLine($"- Họ & tên: {ten[i]}\n- Mã số sinh viên: {Msv[i]}\n- Năm sinh của sinh viên: {namSinh[i]}\n- Tuổi của sinh viên: {tuoiSv[i]}");
+                    int x = 0;
+                    Console.SetCursorPosition(57, y + i + x++);
+                    Console.WriteLine($"Thông tin sinh viên thứ {i + 1}:");
+                    Console.SetCursorPosition(57, y + i + x++);
+                    Console.WriteLine($"- Họ & tên: {ten[i]}");
+                    Console.SetCursorPosition(57, y + i + x++);
+                    Console.WriteLine($"- Mã số sinh viên: {Msv[i]}");
+                    Console.SetCursorPosition(57, y + i + x++);
+                    Console.WriteLine($"- Năm sinh của sinh viên: {namSinh[i]}");
+                    Console.SetCursorPosition(57, y + i + x++);
+                    Console.WriteLine($"- Tuổi của sinh viên: {tuoiSv[i]}");
+                    Console.SetCursorPosition(57, y + i + x++);
+                    y += 5;
                 }
 
             }
