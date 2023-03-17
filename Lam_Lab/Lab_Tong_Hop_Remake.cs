@@ -41,28 +41,27 @@ namespace LAB_TONG_HOP
                     {
                         case 0:
                             {
-
                                 Environment.Exit(0);
                                 break;
                             }
                         case 1:
                             {
-                                Bai1();
+                                KiemTraSoChanLe();
                                 break;
                             }
                         case 2:
                             {
-                                Bai2();
+                                KiemTraNgayThang();
                                 break;
                             }
                         case 3:
                             {
-                                Bai3();
+                                XuLyMangDiem();
                                 break;
                             }
                         case 4:
                             {
-                                Bai4();
+                                XuLyMangThongTin();
                                 break;
                             }
                         default:
@@ -127,9 +126,9 @@ namespace LAB_TONG_HOP
             Console.SetCursorPosition(25, 7);
         }
 
-        static void NhapMangSo(int[] a, int n)
+        static void NhapMangSo(int[] arrNum, int soLuong)
         {
-            for (int i = 0; i < n; ++i)
+            for (int i = 0; i < soLuong; ++i)
             {
                 bool checkPhanTu = true;
                 do
@@ -137,7 +136,7 @@ namespace LAB_TONG_HOP
                     Console.Write($"Nhập số thứ {i + 1} = ");
                     try
                     {
-                        a[i] = Convert.ToInt32(Console.ReadLine());
+                        arrNum[i] = Convert.ToInt32(Console.ReadLine());
                         checkPhanTu = false;
                     }
                     catch
@@ -147,45 +146,45 @@ namespace LAB_TONG_HOP
                 } while (checkPhanTu);
             }
         }
-        static void KiemTraChanLe(int[] a, int n)
+        static void KiemTraChanLe(int[] arrNum, int soLuong)
         {
             Console.SetCursorPosition(57, 10);
             Console.Write("Các số chẵn là: ");
-            for (int i = 0; i < n; ++i)
+            for (int i = 0; i < soLuong; ++i)
             {
-                if (a[i] % 2 == 0)
+                if (arrNum[i] % 2 == 0)
                 {
-                    Console.Write($"{a[i]} ");
+                    Console.Write($"{arrNum[i]} ");
                 }
 
             }
             Console.SetCursorPosition(57, 11);
             Console.Write("Các số lẻ là: ");
-            for (int i = 0; i < n; ++i)
+            for (int i = 0; i < soLuong; ++i)
             {
-                if (a[i] % 2 != 0)
+                if (arrNum[i] % 2 != 0)
                 {
-                    Console.Write($"{a[i]} ");
+                    Console.Write($"{arrNum[i]} ");
                 }
             }
             Console.ReadKey();
             Console.Clear();
         }
-        static void Bai1()
+        static void KiemTraSoChanLe()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(8, 1);
             Console.Write("[1]: Kiểm tra số chẵn lẻ");
             Console.ResetColor();
             Console.SetCursorPosition(1, 8);
-            int n = -1;
+            int soLuong = -1;
             do
             {
                 Console.Write("\nNhập số lượng phần tử: ");
                 try
                 {
-                    n = Convert.ToInt32(Console.ReadLine());
-                    if (n < 0 || n > Max_Phan_Tu)
+                    soLuong = Convert.ToInt32(Console.ReadLine());
+                    if (soLuong < 0 || soLuong > Max_Phan_Tu)
                     {
                         Console.Write("Số lượng phần tử nhập không hợp lệ!");
                         Console.ReadKey();
@@ -198,11 +197,11 @@ namespace LAB_TONG_HOP
                     Console.ReadKey();
 
                 }
-            } while (n < 0 || n > Max_Phan_Tu);
+            } while (soLuong < 0 || soLuong > Max_Phan_Tu);
 
-            int[] a = new int[n];
-            NhapMangSo(a, n);
-            KiemTraChanLe(a, n);
+            int[] arrNum = new int[soLuong];
+            NhapMangSo(arrNum, soLuong);
+            KiemTraChanLe(arrNum, soLuong);
         }
 
 // **************************************************************************************************
@@ -211,19 +210,19 @@ namespace LAB_TONG_HOP
             if (nam % 400 == 0 || (nam % 4 == 0 && nam % 100 != 0)) return true;
             else return false;
         }
-        static int CheckNgay(int thang, int nam)
+        static int CheckNgay(int thangHienTai, int namHienTai)
         {
-            if (thang == 1 || thang == 3 || thang == 5 || thang == 7 || thang == 8 || thang == 10 || thang == 12)
+            if (thangHienTai == 1 || thangHienTai == 3 || thangHienTai == 5 || thangHienTai == 7 || thangHienTai == 8 || thangHienTai == 10 || thangHienTai == 12)
             {
                 return 31;
             }
-            else if (thang == 4 || thang == 6 || thang == 9 || thang == 11)
+            else if (thangHienTai == 4 || thangHienTai == 6 || thangHienTai == 9 || thangHienTai == 11)
             {
                 return 30;
             }
             else
             {
-                if (CheckThang2(nam))
+                if (CheckThang2(namHienTai))
                 {
                     return 29;
                 }
@@ -234,44 +233,44 @@ namespace LAB_TONG_HOP
             }
         }
 
-        static void NgayKeTiep(int nam, int thang, int ngay)
+        static void NgayKeTiep(int namHienTai, int thangHienTai, int ngayHienTai)
         {
-            int cNgay = CheckNgay(thang, nam);
-            int namTiepTheo = nam;
-            int thangTiepTheo = thang;
-            int ngayTiepTheo = ngay;
+            int cNgay = CheckNgay(thangHienTai, namHienTai);
+            int namTiepTheo = namHienTai;
+            int thangTiepTheo = thangHienTai;
+            int ngayTiepTheo =ngayHienTai;
 
-            if (nam > 0 && (thang > 0 && thang < 13) && (ngay > 0 && ngay <= cNgay))
+            if (namHienTai > 0 && (thangHienTai > 0 && thangHienTai < 13) && (ngayHienTai > 0 && ngayHienTai <= cNgay))
             {
-                ngayTiepTheo = ngay + 1;
+                ngayTiepTheo = ngayHienTai + 1;
 
-                if (thang != 12 && ngay == cNgay)
+                if (thangHienTai != 12 && ngayHienTai == cNgay)
                 {
                     ngayTiepTheo = 1;
-                    thangTiepTheo = thang + 1;
+                    thangTiepTheo = thangHienTai + 1;
                 }
-                else if (thang == 12 && ngay == cNgay)
+                else if (thangHienTai == 12 && ngayHienTai == cNgay)
                 {
                     ngayTiepTheo = 1;
-                    namTiepTheo = nam + 1;
+                    namTiepTheo = namHienTai + 1;
                     thangTiepTheo = 1;
                 }
-                else if (thang == 2)
+                else if (thangHienTai == 2)
                 {
-                    if (CheckThang2(nam))
+                    if (CheckThang2(namHienTai))
                     {
-                        if (ngay == 29)
+                        if (ngayHienTai == 29)
                         {
                             ngayTiepTheo = 1;
-                            thangTiepTheo = thang + 1;
+                            thangTiepTheo = thangHienTai + 1;
                         }
                     }
                     else
                     {
-                        if (ngay == 28)
+                        if (ngayHienTai == 28)
                         {
                             ngayTiepTheo = 1;
-                            thangTiepTheo = thang + 1;
+                            thangTiepTheo = thangHienTai + 1;
                         }
                     }
                 }
@@ -280,52 +279,52 @@ namespace LAB_TONG_HOP
             Console.WriteLine($"Ngày tiếp theo: {ngayTiepTheo}/{thangTiepTheo}/{namTiepTheo}");
         }
 
-        static void NgayKeTruoc(int nam, int thang, int ngay)
+        static void NgayKeTruoc(int namHienTai, int thangHienTai, int ngayHienTai)
         {
-            int cNgay = CheckNgay(thang, nam);
-            int namTruocDo = nam;
-            int thangTruocDo = thang;
-            int ngayTruocDo = ngay;
+            int cNgay = CheckNgay(thangHienTai, namHienTai);
+            int namTruocDo = namHienTai;
+            int thangTruocDo = thangHienTai;
+            int ngayTruocDo = ngayHienTai;
 
-            if (nam > 0 && (thang > 0 && thang < 13) && (ngay > 0 && ngay <= cNgay))
+            if (namHienTai > 0 && (thangHienTai > 0 && thangHienTai < 13) && (ngayHienTai > 0 && ngayHienTai <= cNgay))
             {
 
-                ngayTruocDo = ngay - 1;
+                ngayTruocDo = ngayHienTai - 1;
 
-                if (thang != 1 && ngay == 1)
+                if (thangHienTai != 1 && ngayHienTai == 1)
                 {
 
-                    if (thang == 2 || thang == 4 || thang == 6 || thang == 8 || thang == 9 || thang == 11)
+                    if (thangHienTai == 2 || thangHienTai == 4 || thangHienTai == 6 || thangHienTai == 8 || thangHienTai == 9 || thangHienTai == 11)
                     {
                         ngayTruocDo = 31;
-                        thangTruocDo = thang - 1;
+                        thangTruocDo = thangHienTai - 1;
                     }
 
-                    if (thang == 3)
+                    if (thangHienTai == 3)
                     {
-                        if (CheckThang2(nam))
+                        if (CheckThang2(namHienTai))
                         {
                             ngayTruocDo = 29;
-                            thangTruocDo = thang - 1;
+                            thangTruocDo = thangHienTai - 1;
                         }
                         else
                         {
                             ngayTruocDo = 28;
-                            thangTruocDo = thang - 1;
+                            thangTruocDo = thangHienTai - 1;
                         }
                     }
 
-                    if (thang == 5 || thang == 7 || thang == 10 || thang == 12)
+                    if (thangHienTai == 5 || thangHienTai == 7 || thangHienTai == 10 || thangHienTai == 12)
                     {
                         ngayTruocDo = 30;
-                        thangTruocDo = thang - 1;
+                        thangTruocDo = thangHienTai - 1;
                     }
                 }
                 //nếu tháng nhập vào là tháng 1 và ngày 1 thì ngày tháng năm trước đó sẽ là ngày 31 tháng 12 năm trước đó
-                else if (thang == 1 && thang == 1)
+                else if (thangHienTai == 1 && thangHienTai == 1)
                 {
                     ngayTruocDo = 31;
-                    namTruocDo = nam - 1;
+                    namTruocDo = namHienTai - 1;
                     thangTruocDo = 12;
                 }
             }
@@ -333,7 +332,7 @@ namespace LAB_TONG_HOP
             Console.WriteLine($"Ngày trước đó: {ngayTruocDo}/{thangTruocDo}/{namTruocDo}");
         }
 
-        static void Bai2()
+        static void KiemTraNgayThang()
         {
         quaylai1:
             Console.Clear();
@@ -421,10 +420,10 @@ namespace LAB_TONG_HOP
         }
 
 // **************************************************************************************************
-        static void NhapMangDiem(double[] a, int n)
+        static void NhapMangDiem(double[] arrDiem, int soLuong)
         {
 
-            for (int i = 0; i < n; ++i)
+            for (int i = 0; i < soLuong; ++i)
             {
                 bool checkDiem = true;
                 do
@@ -432,8 +431,8 @@ namespace LAB_TONG_HOP
                     Console.Write($"Nhập điểm thứ {i + 1} = ");
                     try
                     {
-                        a[i] = Convert.ToDouble(Console.ReadLine());
-                        if (a[i] < 0 || a[i] > 10)
+                        arrDiem[i] = Convert.ToDouble(Console.ReadLine());
+                        if (arrDiem[i] < 0 || arrDiem[i] > 10)
                         {
                             Console.WriteLine("Điểm nhập không hợp lệ, xin hãy kiểm tra lại!");
                         }
@@ -447,16 +446,16 @@ namespace LAB_TONG_HOP
             }
         }
 
-        static void XuatMangDiem(double[] a, int n, int x, int y)
+        static void XuatMangDiem(double[] arrDiem, int soLuong, int xViTri, int yViTri)
         {
-            for (int i = 0; i < n; ++i)
+            for (int i = 0; i < soLuong; ++i)
             {
-                Console.SetCursorPosition(x, y + i);
-                Console.Write($"{a[i]}");
-                Console.Write(a[i] < 5 ? " - Trượt" : " - Đỗ");
+                Console.SetCursorPosition(xViTri, yViTri + i);
+                Console.Write($"{arrDiem[i]}");
+                Console.Write(arrDiem[i] < 5 ? " - Trượt" : " - Đỗ");
             }
         }
-        static void Bai3()
+        static void XuLyMangDiem()
         {
            Console.Clear();
             Info();
@@ -472,14 +471,14 @@ namespace LAB_TONG_HOP
             Console.SetCursorPosition(1, 8);
             Console.ResetColor();
 
-            int n = -1;
+            int soLuong = -1;
             do
             {
                 Console.Write("\nNhập số lượng điểm: ");
                 try
                 {
-                    n = Convert.ToInt32(Console.ReadLine());
-                    if (n < 0 || n > Max_Phan_Tu)
+                    soLuong = Convert.ToInt32(Console.ReadLine());
+                    if (soLuong < 0 || soLuong > Max_Phan_Tu)
                     {
                         Console.Write("Số lượng điểm nhập không hợp lệ!");
                         Console.ReadKey();
@@ -492,24 +491,24 @@ namespace LAB_TONG_HOP
                     Console.ReadKey();
                     
                 }
-            } while (n < 0 || n > Max_Phan_Tu);
+            } while (soLuong < 0 || soLuong > Max_Phan_Tu);
 
-            double[] a = new double[n];
-            NhapMangDiem(a, n);
+            double[] arrDiem = new double[soLuong];
+            NhapMangDiem(arrDiem, soLuong);
             Console.SetCursorPosition(57, 9);
             Console.WriteLine("Nhập vào:");
-            XuatMangDiem(a, n, 57, 11);
+            XuatMangDiem(arrDiem, soLuong, 57, 11);
 
-            Array.Sort(a);
+            Array.Sort(arrDiem);
             Console.SetCursorPosition(77, 9);
             Console.WriteLine("Sắp tăng: ");
-            XuatMangDiem(a, n, 77, 11);
+            XuatMangDiem(arrDiem, soLuong, 77, 11);
 
-            Array.Sort(a);
-            Array.Reverse(a);
+            Array.Sort(arrDiem);
+            Array.Reverse(arrDiem);
             Console.SetCursorPosition(97, 9);
             Console.WriteLine("Sắp giảm: ");
-            XuatMangDiem(a, n, 97, 11);
+            XuatMangDiem(arrDiem, soLuong, 97, 11);
 
             Console.ReadKey();
             Console.Clear();
@@ -517,7 +516,7 @@ namespace LAB_TONG_HOP
 
 // **************************************************************************************************
 
-        static void Bai4()
+        static void XuLyMangThongTin()
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(8, 4);
@@ -526,14 +525,14 @@ namespace LAB_TONG_HOP
             Console.SetCursorPosition(1, 8);
             Console.ResetColor();
 
-            int n = -1;
+            int soLuong = -1;
             do
             {
                 Console.Write("Nhập số lượng sinh viên: ");
                 try
                 {
-                    n = Convert.ToInt32(Console.ReadLine());
-                    if (n < 1 || n > Max_Phan_Tu)
+                    soLuong = Convert.ToInt32(Console.ReadLine());
+                    if (soLuong < 1 || soLuong > Max_Phan_Tu)
                     {
                         Console.WriteLine("Số lượng sinh viên nhập không hợp lệ");
                     }
@@ -544,33 +543,33 @@ namespace LAB_TONG_HOP
                     Console.WriteLine("Dữ liệu nhập không được cho phép!");
                 }
 
-            } while (n < 1 || n > Max_Phan_Tu);
+            } while (soLuong < 1 || soLuong > Max_Phan_Tu);
 
-            string[] ten = new string[n];
-            string[] Msv = new string[n];
-            string[] tempMSV = new string[n];
-            int[] namSinh = new int[n];
-            int[] tuoiSv = new int[n];
+            string[] hoTen = new string[soLuong];
+            string[] maSv = new string[soLuong];
+            string[] tempMSV = new string[soLuong];
+            int[] namSinh = new int[soLuong];
+            int[] tuoiSv = new int[soLuong];
             int namHienTai = 2023;
 
-            for (int i = 0; i < n; ++i)
+            for (int i = 0; i < soLuong; ++i)
             {
                 Console.WriteLine($"Nhập thông tin sinh viên thứ {i + 1}:");
-                Console.Write("Tên: ");
-                ten[i] = Console.ReadLine();
+                Console.Write("Họ tên: ");
+                hoTen[i] = Console.ReadLine();
 
                 bool checkTrung;
                 do
                 {
                     Console.Write("Mã số sinh viên: ");
                     checkTrung = false;
-                    Msv[i] = Console.ReadLine();
-                    int lengthString = Msv[i].Length;
+                    maSv[i] = Console.ReadLine();
+                    int lengthString =maSv[i].Length;
                     if (i > 0)
                     {
                         for (int j = i - 1; j >= 0; --j)
                         {
-                            if (Msv[i] == Msv[j] || lengthString < 3)
+                            if (maSv[i] == maSv[j] || lengthString < 3)
                             {
                                 Console.WriteLine("Mã số sinh viên này đã được tồn tại hoặc không hợp lệ!");
                                 checkTrung = true;
@@ -647,21 +646,21 @@ namespace LAB_TONG_HOP
             if (checkNhapTuoi == 1)
             {
 
-                for (int i = 0; i < n; ++i)
+                for (int i = 0; i < soLuong; ++i)
                 {
                     tuoiSv[i] = namHienTai - namSinh[i];
                 }
 
                 int y = 11;
-                for (int i = 0; i < n; ++i)
+                for (int i = 0; i < soLuong; ++i)
                 {
                     int x = 0;
                     Console.SetCursorPosition(57, y + i + x++);
                     Console.WriteLine($"Thông tin sinh viên thứ {i + 1}:");
                     Console.SetCursorPosition(57, y + i + x++);
-                    Console.WriteLine($"- Họ & tên: {ten[i]}");
+                    Console.WriteLine($"- Họ & tên: {hoTen[i]}");
                     Console.SetCursorPosition(57, y + i + x++);
-                    Console.WriteLine($"- Mã số sinh viên: {Msv[i]}");
+                    Console.WriteLine($"- Mã số sinh viên: {maSv[i]}");
                     Console.SetCursorPosition(57, y + i + x++);
                     Console.WriteLine($"- Năm sinh của sinh viên: {namSinh[i]}");
                     Console.SetCursorPosition(57, y + i + x++);
@@ -674,15 +673,15 @@ namespace LAB_TONG_HOP
             else
             {
                 int y = 11;
-                for (int i = 0; i < n; ++i)
+                for (int i = 0; i < soLuong; ++i)
                 {
                     int x = 0;
                     Console.SetCursorPosition(57, y + i + x++);
                     Console.WriteLine($"Thông tin sinh viên thứ {i + 1}:");
                     Console.SetCursorPosition(57, y + i + x++);
-                    Console.WriteLine($"- Họ & tên: {ten[i]}");
+                    Console.WriteLine($"- Họ & tên: {hoTen[i]}");
                     Console.SetCursorPosition(57, y + i + x++);
-                    Console.WriteLine($"- Mã số sinh viên: {Msv[i]}");
+                    Console.WriteLine($"- Mã số sinh viên: {maSv[i]}");
                     Console.SetCursorPosition(57, y + i + x++);
                     Console.WriteLine($"- Năm sinh của sinh viên: {namSinh[i]}");
                     Console.SetCursorPosition(57, y + i + x++);
