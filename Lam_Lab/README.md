@@ -1,5 +1,7 @@
 ![334462240_729631908819206_6878327311318515872_n](https://user-images.githubusercontent.com/108053955/226072171-96d350ac-1429-4693-ab4f-0fd0c9de71eb.jpg)
 
+Khoe tý thôi.png =]]]]
+
 * Lab Tổng Hợp:
   - Bài 1:
     + Fix người dùng nhập các kiểu dữ liệu không phải là hợp lệ cho nhập số lượng phần tử mảng số. (Kí tự như: abc, XYZ, ./;'ơ]p=-+ ....)
