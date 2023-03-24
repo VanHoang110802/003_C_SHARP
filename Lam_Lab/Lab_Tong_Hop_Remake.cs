@@ -20,18 +20,16 @@ namespace LAB_TONG_HOP
             Console.InputEncoding = Encoding.UTF8;
 
             Menu();
-
         }
         static void Menu()
         {
-
             int luaChon;
             bool checkMenu = true;
             do
             {
-                Info();
+                InInfo();
                 Console.SetCursorPosition(0, 0);
-                NoiDungMenu();
+                InNoiDungMenu();
 
                 try
                 {
@@ -82,7 +80,7 @@ namespace LAB_TONG_HOP
             } while (checkMenu);
         }
 
-        static void Info()
+        static void InInfo()
         {
             Console.SetCursorPosition(60, 2);
             Console.Write("Họ tên:     Trương Văn Hoàng");
@@ -91,7 +89,7 @@ namespace LAB_TONG_HOP
             Console.SetCursorPosition(60, 4);
             Console.Write("Giảng viên: Nguyễn Khánh Huyền (huyennk6)");
         }
-        static void NoiDungMenu()
+        static void InNoiDungMenu()
         {
             for (int i = 0; i < 110; ++i)
             {
@@ -100,7 +98,7 @@ namespace LAB_TONG_HOP
             Console.WriteLine("\n\t[1]: Kiểm tra số chẵn lẻ");
             Console.WriteLine("\t[2]: Kiểm tra ngày tháng");
             Console.WriteLine("\t[3]: Mảng điểm");
-            Console.WriteLine("\t[4]: Mảng thông tin sinh viên Poly");
+            Console.WriteLine("\t[4]: Mảng thông tin sinh viên");
             Console.WriteLine("\t[0]: Thoát");
             for (int i = 0; i < 110; ++i)
             {
@@ -148,24 +146,73 @@ namespace LAB_TONG_HOP
         }
         static void KiemTraChanLe(int[] arrNum, int soLuong)
         {
-            Console.SetCursorPosition(57, 10);
-            Console.Write("Các số chẵn là: ");
-            for (int i = 0; i < soLuong; ++i)
             {
-                if (arrNum[i] % 2 == 0)
+                int demChan = 0, demLe = 0;
+
+                Console.SetCursorPosition(57, 10);
+                Console.Write("Các số chẵn là: ");
+                for (int i = 0; i < soLuong; ++i)
                 {
-                    Console.Write($"{arrNum[i]} ");
+                    if (arrNum[i] % 2 == 0)
+                    {
+                        ++demChan;
+                        break;
+                    }
+
+                }
+                Console.SetCursorPosition(57, 11);
+                Console.Write("Các số lẻ là: ");
+                for (int i = 0; i < soLuong; ++i)
+                {
+                    if (arrNum[i] % 2 != 0)
+                    {
+                        ++demLe;
+                        break;
+                    }
+                }
+                if(demLe == 0 && demChan != 0)
+                {
+                    Console.SetCursorPosition(57, 10);
+                    Console.Write($"Các số chẵn là: ");
+                    for(int i=0;i<soLuong;++i)
+                    {
+                        if (arrNum[i] % 2 == 0)
+                        {
+                            Console.Write(arrNum[i]);
+                            Console.Write(" ");
+                        }
+                    }
+                    Console.SetCursorPosition(57, 11);
+                    Console.Write("Các số lẻ là: 0");
+                    
+                }
+                else if (demChan == 0 && demLe != 0)
+                {
+                    Console.SetCursorPosition(57, 10);
+                    Console.Write("Các số chẵn là: 0");
+                    Console.SetCursorPosition(57, 11);
+                    Console.Write($"Các số lẻ là: ");
+                    for (int i = 0; i < soLuong; ++i)
+                    {
+                        if (arrNum[i] % 2 != 0)
+                        {
+                            Console.Write(arrNum[i]);
+                            Console.Write(" ");
+                        }
+                    }
+
+                }
+               
+
+                if (soLuong == 0)
+                {
+                    Console.SetCursorPosition(57, 10);
+                    Console.Write("Các số chẵn là: 0");
+                    Console.SetCursorPosition(57, 11);
+                    Console.Write("Các số lẻ là: 0");
+                    Console.SetCursorPosition(57, 12);
                 }
 
-            }
-            Console.SetCursorPosition(57, 11);
-            Console.Write("Các số lẻ là: ");
-            for (int i = 0; i < soLuong; ++i)
-            {
-                if (arrNum[i] % 2 != 0)
-                {
-                    Console.Write($"{arrNum[i]} ");
-                }
             }
             Console.ReadKey();
             Console.Clear();
@@ -210,6 +257,7 @@ namespace LAB_TONG_HOP
             if (nam % 400 == 0 || (nam % 4 == 0 && nam % 100 != 0)) return true;
             else return false;
         }
+
         static int CheckNgay(int thangHienTai, int namHienTai)
         {
             if (thangHienTai == 1 || thangHienTai == 3 || thangHienTai == 5 || thangHienTai == 7 || thangHienTai == 8 || thangHienTai == 10 || thangHienTai == 12)
@@ -233,12 +281,12 @@ namespace LAB_TONG_HOP
             }
         }
 
-        static void NgayKeTiep(int namHienTai, int thangHienTai, int ngayHienTai)
+        static void TimNgayKeTiep(int namHienTai, int thangHienTai, int ngayHienTai)
         {
             int cNgay = CheckNgay(thangHienTai, namHienTai);
             int namTiepTheo = namHienTai;
             int thangTiepTheo = thangHienTai;
-            int ngayTiepTheo =ngayHienTai;
+            int ngayTiepTheo = ngayHienTai;
 
             if (namHienTai > 0 && (thangHienTai > 0 && thangHienTai < 13) && (ngayHienTai > 0 && ngayHienTai <= cNgay))
             {
@@ -279,7 +327,7 @@ namespace LAB_TONG_HOP
             Console.WriteLine($"Ngày tiếp theo: {ngayTiepTheo}/{thangTiepTheo}/{namTiepTheo}");
         }
 
-        static void NgayKeTruoc(int namHienTai, int thangHienTai, int ngayHienTai)
+        static void TimNgayKeTruoc(int namHienTai, int thangHienTai, int ngayHienTai)
         {
             int cNgay = CheckNgay(thangHienTai, namHienTai);
             int namTruocDo = namHienTai;
@@ -336,12 +384,12 @@ namespace LAB_TONG_HOP
         {
         quaylai1:
             Console.Clear();
-            Info();
+            InInfo();
             Console.SetCursorPosition(1, 7);
             Console.Write($"Vui lòng nhập lựa chọn: {Lua_Chon}");
             Console.SetCursorPosition(0, 0);
 
-            NoiDungMenu();
+            InNoiDungMenu();
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(8, 2);
@@ -412,8 +460,8 @@ namespace LAB_TONG_HOP
             }
             Console.SetCursorPosition(57, 9);
             Console.WriteLine($"Ngày vừa nhập: {ngayHienTai}/{thangHienTai}/{namHienTai}");
-            NgayKeTiep(namHienTai, thangHienTai, ngayHienTai);
-            NgayKeTruoc(namHienTai, thangHienTai, ngayHienTai);
+            TimNgayKeTiep(namHienTai, thangHienTai, ngayHienTai);
+            TimNgayKeTruoc(namHienTai, thangHienTai, ngayHienTai);
             Console.SetCursorPosition(57, 12);
             Console.ReadKey();
             Console.Clear();
@@ -458,12 +506,12 @@ namespace LAB_TONG_HOP
         static void XuLyMangDiem()
         {
            Console.Clear();
-            Info();
+            InInfo();
             Console.SetCursorPosition(1, 7);
             Console.Write($"Vui lòng nhập lựa chọn: {Lua_Chon}");
             Console.SetCursorPosition(0, 0);
 
-            NoiDungMenu();
+            InNoiDungMenu();
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(8, 3);
@@ -547,7 +595,6 @@ namespace LAB_TONG_HOP
 
             string[] hoTen = new string[soLuong];
             string[] maSv = new string[soLuong];
-            string[] tempMSV = new string[soLuong];
             int[] namSinh = new int[soLuong];
             int[] tuoiSv = new int[soLuong];
             int namHienTai = 2023;
