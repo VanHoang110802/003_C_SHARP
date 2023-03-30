@@ -83,6 +83,40 @@ namespace BaiTap3
             } while (checkTiepTuc != 0);
         }
 
+        public void SapXepSach()
+        {
+            int demSoLuong = _lstSach.Count;
+            if (demSoLuong > 0)
+            {
+                int luaChonSX;
+                do
+                {
+                    Console.WriteLine("Ban muon sap xep kieu gi?");
+                    Console.WriteLine("\t[1]: Tang dan");
+                    Console.WriteLine("\t[2]: Giam dan");
+                    Console.Write("Ban chon: ");
+                    luaChonSX = Convert.ToInt32(Console.ReadLine());
+                    if (luaChonSX < 1 || luaChonSX > 2)
+                        Console.WriteLine("Lua chon nhap khong hop le!!");
+                } while (luaChonSX < 1 || luaChonSX > 2);
+
+
+                if (luaChonSX == 1)
+                    _lstSach.Sort(delegate (Sach s1, Sach s2) { return s1.IdSach.CompareTo(s2.IdSach); });
+
+                else
+                    _lstSach.Sort(delegate (Sach s1, Sach s2) { return s2.IdSach.CompareTo(s1.IdSach); });
+
+
+                Console.WriteLine("Sap xep thanh cong!!!");
+            }
+            else
+            {
+                Console.WriteLine("\nXin hay nhap thong tin!!!");
+            }
+            
+        }
+
         public void XuatThongTin()
         {
             int demSoLuong = _lstSach.Count;
