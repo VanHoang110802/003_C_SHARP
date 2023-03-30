@@ -6,92 +6,60 @@ using System.Threading.Tasks;
 
 namespace BaiTap1
 {
-    internal class Program
+    internal class NguoiYeuCu
     {
-        static void Main(string[] args)
+        private int idNYC;
+        private string hoTenNYC;
+        private double chieuCao, canNang;
+        private bool isTrueLove;
+        public NguoiYeuCu()
         {
-            Menu();
+
         }
 
-        static void Menu()
+        public NguoiYeuCu(int idNYC, string hoTenNYC, double chieuCao, double canNang, bool isTrueLove)
         {
-            QuanLyNYC qlNYC = new QuanLyNYC();
-
-            int luaChon = -1;
-            do
-            {
-                Console.WriteLine("--------------------- MENU ----------------------");
-                Console.WriteLine("\t[1]. Nhap thong tin nguoi yeu cu");
-                Console.WriteLine("\t[2]. Xuat thong tin nguoi yeu cu");
-                Console.WriteLine("\t[3]. Tim kiem id nguoi yeu cu");
-                Console.WriteLine("\t[4]. Tim kiem chieu cao nguoi yeu cu");
-                Console.WriteLine("\t[5]. Tim kiem cang nang nguoi yeu cu");
-                Console.WriteLine("\t[0]. Thoat");
-                Console.WriteLine("-------------------------------------------------");
-                Console.Write("Vui long nhap lua chon cua ban: ");
-
-                try
-                {
-                    luaChon = Convert.ToInt32(Console.ReadLine());
-                    switch (luaChon)
-                    {
-                        case 1:
-                            {
-                                qlNYC.NhapThongTin();
-                                Console.ReadKey();
-                                Console.Clear();
-                                break;
-                            }
-                        case 2:
-                            {
-                                qlNYC.XuatThongTin();
-                                Console.ReadKey();
-                                Console.Clear();
-                                break;
-                            }
-
-                        case 3:
-                            {
-                                
-                                Console.ReadKey();
-                                Console.Clear();
-                                break;
-                            }
-
-                        case 4:
-                            {
-                                
-                                Console.ReadKey();
-                                Console.Clear();
-                                break;
-                            }
-
-                        case 5:
-                            {
-                                
-                                Console.ReadKey();
-                                Console.Clear();
-                                break;
-                            }
-                        case 0:
-                            {
-                                Environment.Exit(0);
-                                break;
-                            }
-                        default:
-                            Console.WriteLine("Lua chon nhap khong hop le, xin hay kiem tra lai!");
-                            Console.ReadKey();
-                            Console.Clear();
-                            break;
-                    }
-                }
-                catch
-                {
-                    Console.WriteLine("Lua chon nhap khong duoc phep ho tro!");
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-            } while (luaChon != 0);
+            this.idNYC = idNYC;
+            this.hoTenNYC = hoTenNYC;
+            this.chieuCao = chieuCao;
+            this.canNang = canNang;
+            this.isTrueLove = isTrueLove;
         }
+
+        public int IdNYC { get => idNYC; set => idNYC = value; }
+        public string HoTenNYC { get => hoTenNYC; set => hoTenNYC = value; }
+        public double ChieuCao { get => chieuCao; set => chieuCao = value; }
+        public double CanNang { get => canNang; set => canNang = value; }
+        public bool IsTrueLove { get => isTrueLove; set => isTrueLove = value; }
+
+        public string CheckTrueLove()
+        {
+            return (isTrueLove ? "Co" : "Khong");
+        }
+        public void NhapThongTin()
+        {
+            Console.WriteLine("Vui long nhap thong tin cho nguoi yeu cu: ");
+            Console.Write("ID nguoi yeu cu: ");
+            idNYC = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Ho & ten: ");
+            hoTenNYC = Console.ReadLine();
+            Console.Write("Chieu cao: ");
+            chieuCao = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Can nang: ");
+            canNang = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Co la tinh yeu dit vit hay khong? (true - co, false - khong): ");
+            isTrueLove = Convert.ToBoolean(Console.ReadLine());
+        }
+
+        
+        public void XuatThongTin()
+        {
+            Console.WriteLine($"ID nguoi yeu cu: {idNYC}");
+            Console.WriteLine($"Ho & ten: {hoTenNYC}");
+            Console.WriteLine($"Chieu cao: {chieuCao}");
+            Console.WriteLine($"Can nang: {canNang}");
+            Console.WriteLine($"{CheckTrueLove()} la tinh yeu dit vit.");
+        }
+
     }
 }
