@@ -21,7 +21,7 @@ namespace BaiTap3
             {
                 try
                 {
-                    Console.WriteLine("------------------ MENU ------------------");
+                    Console.WriteLine("------------------ MENU --------------------");
                     Console.WriteLine("\t[1] Nhap thong tin");
                     Console.WriteLine("\t[2] Xuat thong tin");
                     Console.WriteLine("\t[3] Tim kiem ten sach");
@@ -29,7 +29,7 @@ namespace BaiTap3
                     Console.WriteLine("\t[5] Tim kiem so luong sach");
                     Console.WriteLine("\t[6] Sap xep thong tin theo ID");
                     Console.WriteLine("\t[0] Thoat");
-                    Console.WriteLine("------------------------------------------");
+                    Console.WriteLine("--------------------------------------------");
                     Console.Write("Vui long nhap lua chon cua ban: ");
                     luaChon = Convert.ToInt32(Console.ReadLine());
                     switch (luaChon)
@@ -71,7 +71,7 @@ namespace BaiTap3
                             }
                         case 6:
                             {
-                               
+                                qlSach.SapXepSach();
                                 Console.ReadKey();
                                 Console.Clear();
                                 break;
