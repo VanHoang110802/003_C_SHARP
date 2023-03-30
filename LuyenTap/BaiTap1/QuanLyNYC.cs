@@ -10,6 +10,7 @@ namespace BaiTap1
     {
         List<NguoiYeuCu> _lstNYC;
         NguoiYeuCu _nguoiYeuCu;
+        int _timKiemID;
 
         public QuanLyNYC()
         {
@@ -120,6 +121,101 @@ namespace BaiTap1
                 Console.WriteLine();
             } while (checkTiepTuc != 0);
         }
+
+        public void TimKiemID()
+        {
+            bool checkNhapID;
+            do
+            {
+                Console.Write("\nNhap id cua nguoi yeu cu can tim kiem: ");
+                checkNhapID = true;
+                try
+                {
+                    _timKiemID = Convert.ToInt32(Console.ReadLine());
+                    checkNhapID = false;
+                }
+                catch
+                {
+                    Console.WriteLine("\nKieu nhap xuat khong duoc ho tro!!!");
+                }
+            } while (checkNhapID);
+
+            for (int i = 0; i < _lstNYC.Count; ++i)
+            {
+                if (_lstNYC[i].IdNYC == _timKiemID)
+                {
+                    Console.WriteLine("Da tim thay: ");
+                    _lstNYC[i].XuatThongTin();
+                    return; //tìm thấy và thoát luôn
+                }
+            }
+            Console.WriteLine("Khong tim thay!!!!");
+        }
+
+        public void TimKiemChieuCao()
+        {
+            int demSoLuong = _lstNYC.Count;
+            if (demSoLuong == 0)
+            {
+                Console.WriteLine("Chua nhap thong tin!!!");
+            }
+            else
+            {
+                Console.Write("Nhap chieu cao min: ");
+                double min = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Nhap chieu cao max: ");
+                double max = Convert.ToDouble(Console.ReadLine());
+
+                bool check = false;
+
+                for (int i = 0; i < demSoLuong; i++)
+                {
+                    if (_lstNYC[i].ChieuCao >= min && _lstNYC[i].ChieuCao <= max)
+                    {
+                        Console.WriteLine();
+                        _lstNYC[i].XuatThongTin();
+                        check = true;
+                    }
+                }
+                if (!check)
+                {
+                    Console.WriteLine("\nKhong tim thay thong tin nao!!!");
+                }
+            }
+        }
+
+        public void TimKiemCanNang()
+        {
+            int demSoLuong = _lstNYC.Count;
+            if (demSoLuong == 0)
+            {
+                Console.WriteLine("Chua nhap thong tin!!!");
+            }
+            else
+            {
+                Console.Write("Nhap can nang min: ");
+                double min = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Nhap can nang max: ");
+                double max = Convert.ToDouble(Console.ReadLine());
+
+                bool check = false;
+
+                for (int i = 0; i < demSoLuong; i++)
+                {
+                    if (_lstNYC[i].CanNang <= min || _lstNYC[i].CanNang >= max)
+                    {
+                        Console.WriteLine();
+                        _lstNYC[i].XuatThongTin();
+                        check = true;
+                    }
+                }
+                if (!check)
+                {
+                    Console.WriteLine("\nKhong tim thay thong tin nao!!!");
+                }
+            }
+        }
+
         public void XuatThongTin()
         {
             int demSoLuong = _lstNYC.Count;
