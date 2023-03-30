@@ -202,7 +202,7 @@ namespace BaiTap1
 
                 for (int i = 0; i < demSoLuong; i++)
                 {
-                    if (_lstNYC[i].CanNang <= min || _lstNYC[i].CanNang >= max)
+                    if (_lstNYC[i].CanNang < min || _lstNYC[i].CanNang > max)
                     {
                         Console.WriteLine();
                         _lstNYC[i].XuatThongTin();
