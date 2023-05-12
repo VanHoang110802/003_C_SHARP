@@ -1,0 +1,248 @@
+***  Equals  ***
+
+
+Vui long nhap ma ID cua may tinh: 1
+Vui long nhap ten may tinh: abc1
+Vui long nhap trong luong cua may tinh: 1
+Vui long nhap gia tien cua may tinh: 10000
+Nhap nam san xuat: 1
+Ban co muon nhap tiep hay khong(Co/Khong): CO
+
+Vui long nhap ma ID cua may tinh: 2
+Vui long nhap ten may tinh: 2
+Vui long nhap trong luong cua may tinh: 2
+Vui long nhap gia tien cua may tinh: 2
+Nhap nam san xuat: 2
+Ban co muon nhap tiep hay khong(Co/Khong): Co
+
+Vui long nhap ma ID cua may tinh: 2
+Vui long nhap ten may tinh: axbc1
+Vui long nhap trong luong cua may tinh: 2
+Vui long nhap gia tien cua may tinh: 20000
+Nhap nam san xuat: 2001
+Ban co muon nhap tiep hay khong(Co/Khong): co
+
+Vui long nhap ma ID cua may tinh: 3
+Vui long nhap ten may tinh: XYab
+Vui long nhap trong luong cua may tinh: 3
+Vui long nhap gia tien cua may tinh: 12000
+Nhap nam san xuat: 3
+Ban co muon nhap tiep hay khong(Co/Khong): co
+
+Vui long nhap ma ID cua may tinh: 4
+Vui long nhap ten may tinh: zabcz1
+Vui long nhap trong luong cua may tinh: 4
+Vui long nhap gia tien cua may tinh: 40000
+Nhap nam san xuat: 4
+Ban co muon nhap tiep hay khong(Co/Khong): co
+
+Vui long nhap ma ID cua may tinh: 5
+Vui long nhap ten may tinh: kkk
+Vui long nhap trong luong cua may tinh: 5
+Vui long nhap gia tien cua may tinh: 15000
+Nhap nam san xuat: 5
+Ban co muon nhap tiep hay khong(Co/Khong): khONG
+
+Ma ID cua may tinh la: 1
+Ten cua may tinh la: abc1
+Trong luong cua may tinh la: 1
+Gia tien cua may tinh la: 8500
+Nam san xuat may tinh: 1
+
+Ma ID cua may tinh la: 2
+Ten cua may tinh la: 2
+Trong luong cua may tinh la: 2
+Gia tien cua may tinh la: 1
+Nam san xuat may tinh: 2
+
+Ma ID cua may tinh la: 2
+Ten cua may tinh la: axbc1
+Trong luong cua may tinh la: 2
+Gia tien cua may tinh la: 17000
+Nam san xuat may tinh: 2001
+
+Ma ID cua may tinh la: 3
+Ten cua may tinh la: XYab
+Trong luong cua may tinh la: 3
+Gia tien cua may tinh la: 10200
+Nam san xuat may tinh: 3
+
+Ma ID cua may tinh la: 4
+Ten cua may tinh la: zabcz1
+Trong luong cua may tinh la: 4
+Gia tien cua may tinh la: 34000
+Nam san xuat may tinh: 4
+
+Ma ID cua may tinh la: 5
+Ten cua may tinh la: kkk
+Trong luong cua may tinh la: 5
+Gia tien cua may tinh la: 12750
+Nam san xuat may tinh: 5
+
+
+------------------------------------------
+Vui long nhap ma ID can xoa: 2
+
+Ma ID cua may tinh la: 1
+Ten cua may tinh la: abc1
+Trong luong cua may tinh la: 1
+Gia tien cua may tinh la: 8500
+Nam san xuat may tinh: 1
+
+Ma ID cua may tinh la: 2
+Ten cua may tinh la: axbc1
+Trong luong cua may tinh la: 2
+Gia tien cua may tinh la: 17000
+Nam san xuat may tinh: 2001
+
+Ma ID cua may tinh la: 3
+Ten cua may tinh la: XYab
+Trong luong cua may tinh la: 3
+Gia tien cua may tinh la: 10200
+Nam san xuat may tinh: 3
+
+Ma ID cua may tinh la: 4
+Ten cua may tinh la: zabcz1
+Trong luong cua may tinh la: 4
+Gia tien cua may tinh la: 34000
+Nam san xuat may tinh: 4
+
+Ma ID cua may tinh la: 5
+Ten cua may tinh la: kkk
+Trong luong cua may tinh la: 5
+Gia tien cua may tinh la: 12750
+Nam san xuat may tinh: 5
+
+
+------------------------------------------
+Vui long nhap ten can tim: abc
+Khong tim thay ma phu hop!!!!
+
+
+
+***  Contains  ***
+
+
+Vui long nhap ma ID cua may tinh: 1
+Vui long nhap ten may tinh: abc1
+Vui long nhap trong luong cua may tinh: 1
+Vui long nhap gia tien cua may tinh: 10000
+Nhap nam san xuat: 1
+Ban co muon nhap tiep hay khong(Co/Khong): co
+
+Vui long nhap ma ID cua may tinh: 2
+Vui long nhap ten may tinh: 2
+Vui long nhap trong luong cua may tinh: 2
+Vui long nhap gia tien cua may tinh: 2
+Nhap nam san xuat: 2
+Ban co muon nhap tiep hay khong(Co/Khong): co
+
+Vui long nhap ma ID cua may tinh: 2
+Vui long nhap ten may tinh: axbc1
+Vui long nhap trong luong cua may tinh: 2
+Vui long nhap gia tien cua may tinh: 20000
+Nhap nam san xuat: 2
+Ban co muon nhap tiep hay khong(Co/Khong): co
+
+Vui long nhap ma ID cua may tinh: 3
+Vui long nhap ten may tinh: XYab
+Vui long nhap trong luong cua may tinh: 3
+Vui long nhap gia tien cua may tinh: 12000
+Nhap nam san xuat: 3
+Ban co muon nhap tiep hay khong(Co/Khong): co
+
+Vui long nhap ma ID cua may tinh: 4
+Vui long nhap ten may tinh: zabcz1
+Vui long nhap trong luong cua may tinh: 4
+Vui long nhap gia tien cua may tinh: 40000
+Nhap nam san xuat: 4
+Ban co muon nhap tiep hay khong(Co/Khong): co
+
+Vui long nhap ma ID cua may tinh: 5
+Vui long nhap ten may tinh: 5
+Vui long nhap trong luong cua may tinh: 5
+Vui long nhap gia tien cua may tinh: 5
+Nhap nam san xuat: 5
+Ban co muon nhap tiep hay khong(Co/Khong): khong
+
+Ma ID cua may tinh la: 1
+Ten cua may tinh la: abc1
+Trong luong cua may tinh la: 1
+Gia tien cua may tinh la: 8500
+Nam san xuat may tinh: 1
+
+Ma ID cua may tinh la: 2
+Ten cua may tinh la: 2
+Trong luong cua may tinh la: 2
+Gia tien cua may tinh la: 1
+Nam san xuat may tinh: 2
+
+Ma ID cua may tinh la: 2
+Ten cua may tinh la: axbc1
+Trong luong cua may tinh la: 2
+Gia tien cua may tinh la: 17000
+Nam san xuat may tinh: 2
+
+Ma ID cua may tinh la: 3
+Ten cua may tinh la: XYab
+Trong luong cua may tinh la: 3
+Gia tien cua may tinh la: 10200
+Nam san xuat may tinh: 3
+
+Ma ID cua may tinh la: 4
+Ten cua may tinh la: zabcz1
+Trong luong cua may tinh la: 4
+Gia tien cua may tinh la: 34000
+Nam san xuat may tinh: 4
+
+Ma ID cua may tinh la: 5
+Ten cua may tinh la: 5
+Trong luong cua may tinh la: 5
+Gia tien cua may tinh la: 4
+Nam san xuat may tinh: 5
+
+
+------------------------------------------
+Vui long nhap ma ID can xoa: 2
+
+Ma ID cua may tinh la: 1
+Ten cua may tinh la: abc1
+Trong luong cua may tinh la: 1
+Gia tien cua may tinh la: 8500
+Nam san xuat may tinh: 1
+
+Ma ID cua may tinh la: 2
+Ten cua may tinh la: axbc1
+Trong luong cua may tinh la: 2
+Gia tien cua may tinh la: 17000
+Nam san xuat may tinh: 2
+
+Ma ID cua may tinh la: 3
+Ten cua may tinh la: XYab
+Trong luong cua may tinh la: 3
+Gia tien cua may tinh la: 10200
+Nam san xuat may tinh: 3
+
+Ma ID cua may tinh la: 4
+Ten cua may tinh la: zabcz1
+Trong luong cua may tinh la: 4
+Gia tien cua may tinh la: 34000
+Nam san xuat may tinh: 4
+
+Ma ID cua may tinh la: 5
+Ten cua may tinh la: 5
+Trong luong cua may tinh la: 5
+Gia tien cua may tinh la: 4
+Nam san xuat may tinh: 5
+
+
+------------------------------------------
+Vui long nhap ten can tim: abc
+
+Ma ID cua may tinh la: 1
+Ten cua may tinh la: abc1
+Trong luong cua may tinh la: 1
+Gia tien cua may tinh la: 8500
+Nam san xuat may tinh: 1
+
+
