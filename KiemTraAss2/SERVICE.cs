@@ -36,8 +36,7 @@ namespace BaiKiemTra
                 return -1;
             }
         }
-
-        public void NhapDanhSach(List<NhanVien> lstNhanVien)
+        public void NhapDanhSach(List<NhanVien> lstStudent)
         {
             int check = -1;
             string tiepTuc;
@@ -45,7 +44,7 @@ namespace BaiKiemTra
             {
                 _nhanVien = new NhanVien();
                 _nhanVien.NhapThongTin();
-                lstNhanVien.Add(_nhanVien);
+                lstStudent.Add(_nhanVien);
 
                 do
                 {
