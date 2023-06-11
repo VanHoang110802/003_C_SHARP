@@ -35,10 +35,10 @@ namespace BaiKiemTra
             return Regex.IsMatch(s, @"^[0-9]+(.[0-9]+)?$");
         }
 
-        
+
         public int CheckNhapLuong(string s)
         {
-            if(KiemTraSoThuc(s))
+            if (KiemTraSoThuc(s))
             {
                 return 1;
             }
@@ -83,7 +83,7 @@ namespace BaiKiemTra
                     break;
                 }
             } while (checkSDT != 0);
-            
+
             do
             {
                 Console.Write("Nhap so luong cua nhan vien: ");
